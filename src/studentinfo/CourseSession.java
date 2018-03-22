@@ -3,6 +3,9 @@ package studentinfo;
 import java.util.*;
 
 public class CourseSession {
+	public static final String NEWLINE = System.getProperty("line.separator");
+	public static final String ROSTER_REPORT_HEADER = "Student" + NEWLINE + "----" + NEWLINE;
+	public static final String ROSTER_REPORT_FOOTER = NEWLINE + "#students=";
 
 	private String department;
 	private String number;
@@ -14,7 +17,7 @@ public class CourseSession {
 		this.number = number;
 		this.startDate = startDate;
 	}
-	
+
 	String getDepartment() {
 		return department;
 	}
@@ -46,5 +49,11 @@ public class CourseSession {
 	Date getStartDate() {
 		return startDate;
 	}
+
+	public ArrayList<Student> getAllStudents(){
+		return students;
+	}
+
+	
 
 }
