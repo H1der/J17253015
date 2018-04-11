@@ -2,7 +2,7 @@ package studentinfo;
 
 import java.util.*;
 
-public class CourseSession {
+public class CourseSession implements Comparable<CourseSession> {
 	public static final String NEWLINE = System.getProperty("line.separator");
 	public static final String ROSTER_REPORT_HEADER = "Student" + NEWLINE + "----" + NEWLINE;
 	public static final String ROSTER_REPORT_FOOTER = NEWLINE + "#students=";
@@ -24,11 +24,11 @@ public class CourseSession {
 		this.numberOfCredits = numberOfCredits;
 	}
 
-	String getDepartment() {
+	public String getDepartment() {
 		return department;
 	}
 
-	String getNumber() {
+	public String getNumber() {
 		return number;
 	}
 
@@ -76,6 +76,15 @@ public class CourseSession {
 	public static CourseSession create(String department, String number, Date startDate) {
 		incrementCount();
 		return new CourseSession(department, number, startDate);
+
+	}
+
+	public int compareTo(CourseSession that) {
+		int compare = this.getDepartment().compareTo(that.getDepartment());
+		if (compare == 0) {
+			compare = this.getNumber().compareTo(that.getNumber());
+		}
+		return compare;
 
 	}
 
