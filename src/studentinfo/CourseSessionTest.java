@@ -61,7 +61,7 @@ public class CourseSessionTest extends TestCase {
         CourseSession sessionA = CourseSession.create("CMSC", "101", date);
         CourseSession sessionB = CourseSession.create("ENGL", "101", date);
 
-        assertTrue(sessionA.compareTo(sessionA) < 0);
+        assertTrue(sessionA.compareTo(sessionB) < 0);
         // assertTrue(sessionA.compareTo(sessionB)<0);
         assertTrue(sessionB.compareTo(sessionA) > 0);
 

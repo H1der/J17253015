@@ -1,3 +1,4 @@
+
 import junit.framework.TestSuite;
 
 public class AllTests {
@@ -5,6 +6,7 @@ public class AllTests {
 		TestSuite suite = new TestSuite();
 		suite.addTest(report.AllTests.suite());
 		suite.addTest(studentinfo.AllTests.suite());
+        suite.addTest(summer.AllTests.suite());
 		return suite;
 	}
 

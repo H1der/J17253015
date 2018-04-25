@@ -27,7 +27,7 @@ public class StudentTest extends TestCase {
         assertGpa(student, 3.0);
         student.addGrade(Grade.D);
         assertGpa(student, 2.5);
-        student.addGrade(Grade.E);
+        student.addGrade(Grade.F);
         assertGpa(student, 2.0);
 
     }
@@ -38,7 +38,7 @@ public class StudentTest extends TestCase {
         assertGpa(createHonorsStudent(Grade.B), 4.0);
         assertGpa(createHonorsStudent(Grade.C), 3.0);
         assertGpa(createHonorsStudent(Grade.D), 2.0);
-        assertGpa(createHonorsStudent(Grade.E), 0.0);
+        assertGpa(createHonorsStudent(Grade.F), 0.0);
 
     }
 
