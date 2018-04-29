@@ -13,6 +13,7 @@ public class AllTests {
 		suite.addTestSuite(DateUtilTest.class);
 		suite.addTestSuite(HonorsGradingStategyTest.class);
 		suite.addTestSuite(BasicGradingStrategyTest.class);
+		suite.addTestSuite(ScorerTest.class);
 		return suite;
 	}
 }

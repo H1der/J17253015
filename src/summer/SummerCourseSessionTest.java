@@ -2,15 +2,19 @@ package summer;
 
 import java.util.Date;
 
-import junit.framework.TestCase;
-import studentinfo.CourseSession;
 import studentinfo.DateUtil;
+import studentinfo.Session;
+import studentinfo.SessionTest;
 
-public class SummerCourseSessionTest extends TestCase {
+public class SummerCourseSessionTest extends SessionTest {
     public void testEndDate() {
         Date startDate = DateUtil.createDate(2003, 6, 9);
-        CourseSession session = SummerCourseSession.create("ENGL", "200", startDate);
+        Session session = createSession("ENGL", "200", startDate);
         Date eightweeksOut = DateUtil.createDate(2003, 8, 1);
         assertEquals(eightweeksOut, session.getEndDate());
+    }
+
+    protected Session createSession(String department, String number, Date date) {
+        return SummerCourseSession.create(department, number, date);
     }
 }
