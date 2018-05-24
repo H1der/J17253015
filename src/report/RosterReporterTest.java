@@ -1,14 +1,16 @@
 package report;
 
+import static report.RosterReporter.NEWLINE;
+
 import junit.framework.TestCase;
+import studentinfo.Course;
 import studentinfo.CourseSession;
 import studentinfo.DateUtil;
 import studentinfo.Student;
-import static report.RosterReporter.NEWLINE;
 
 public class RosterReporterTest extends TestCase {
 	public void testRosterReport() {
-		CourseSession session = CourseSession.create("ENGL", "101", DateUtil.createDate(2003, 1, 6));
+        CourseSession session = CourseSession.create(new Course("ENGL", "101"), DateUtil.createDate(2003, 1, 6));
 
 		session.enroll(new Student("A"));
 		session.enroll(new Student("B"));

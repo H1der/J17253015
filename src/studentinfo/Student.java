@@ -19,8 +19,22 @@ public class Student {
         }
     }
 
-    ;
+    public enum Flag {
+        ON_CAMPUS(1),
+        TAX_EXEMPT(2),
+        MINOR(4),
+        TROUBLEMAKER(8);
 
+        private int mask;
+
+        Flag(int mask) {
+            this.mask = mask;
+        }
+    }
+
+    private int settings = 0X0;
+
+    private String id;
 	private String name;
 	private int credits;
     public static final int CREDITS_REQUIRED_FOR_FULL_TIME = 12;
@@ -54,6 +68,7 @@ public class Student {
 
     public Student(String fullName) {
         this.name = fullName;
+
         credits = 0;
         List<String> nameParts = split(fullName);
         final int maximumNumberOfNameParts = 3;
@@ -183,6 +198,34 @@ public class Student {
         for (Integer charge : charges)
             total += charge.intValue();
         return total;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void unset(Flag... flags) {
+        for (Flag flag : flags)
+            settings &= ~flag.mask;
+    }
+
+    public boolean isOn(Flag flag) {
+        // TODO �Զ����ɵķ������
+        return (settings & flag.mask) == flag.mask;
+    }
+
+    public boolean isOff(Flag flag) {
+        // TODO �Զ����ɵķ������
+        return !isOn(flag);
+    }
+
+    public void set(Flag... flags) {
+        for (Flag flag : flags)
+            settings |= flag.mask;
     }
 
 }

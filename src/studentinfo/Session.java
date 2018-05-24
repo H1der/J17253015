@@ -14,8 +14,7 @@ import java.util.logging.Logger;
 abstract public class Session implements Comparable<Session>, Iterable<Student> {
     private int numberOfCredits;
 
-    private String department;
-    private String number;
+    private Course course;
     private Vector<Student> students = new Vector<Student>();
     protected Date startDate;
     private URL url;
@@ -30,7 +29,6 @@ abstract public class Session implements Comparable<Session>, Iterable<Student> 
     }
 
     private void Log(Exception e) {
-        // TODO �Զ����ɵķ������
 
     }
 
@@ -38,9 +36,8 @@ abstract public class Session implements Comparable<Session>, Iterable<Student> 
         return url;
     }
 
-    protected Session(String department, String number, Date startDate) {
-        this.department = department;
-        this.number = number;
+    protected Session(Course course, Date startDate) {
+        this.course = course;
         this.startDate = startDate;
     }
 
@@ -61,11 +58,11 @@ abstract public class Session implements Comparable<Session>, Iterable<Student> 
     }
 
     public String getDepartment() {
-        return department;
+        return course.getDepartment();
     }
 
     public String getNumber() {
-        return number;
+        return course.getNumber();
     }
 
     public int getNumberOfStudents() {

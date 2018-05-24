@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import studentinfo.CourseSession;
+import studentinfo.Session;
 
 public class CourseReport extends CourseReportTest {
 
@@ -21,6 +22,5 @@ public class CourseReport extends CourseReportTest {
             builder.append(session.getDepartment() + " " + session.getNumber() + NEWLINE);
         return builder.toString();
     }
-
 
 }

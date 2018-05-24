@@ -3,20 +3,21 @@ package summer;
 
 import java.util.Date;
 
-import studentinfo.CourseSession;
+import studentinfo.Course;
 import studentinfo.Session;
 
 public class SummerCourseSession extends Session {
-    public static SummerCourseSession create(String department, String number, Date StarDate) {
-        return new SummerCourseSession(department, number, StarDate);
+    public static Session create(Course course, Date StarDate) {
+        return new SummerCourseSession(course, StarDate);
     }
 
-    private SummerCourseSession(String department, String number, Date startDate) {
-        super(department, number, startDate);
+    private SummerCourseSession(Course course, Date startDate) {
+        super(course, startDate);
     }
 
     protected int getSessionLength() {
         return 8;
     }
+
 
 }

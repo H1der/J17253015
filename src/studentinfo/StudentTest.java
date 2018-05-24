@@ -1,7 +1,6 @@
 package studentinfo;
 
 import java.util.logging.Handler;
-import java.util.logging.Logger;
 
 import junit.framework.TestCase;
 import studentinfo.Student.Grade;

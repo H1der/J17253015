@@ -14,11 +14,12 @@ public class ReportCard extends ReportCardTest {
 
     private Map<Student.Grade, String> messages = null;
 
+
     public String getMessage(Student.Grade grade) {
         return getMessages().get(grade);
     }
 
-    private Map<Student.Grade, String> getMessages() {
+    Map<Student.Grade, String> getMessages() {
         if (messages == null) {
             loadMessages();
         }
