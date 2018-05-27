@@ -114,4 +114,9 @@ abstract public class Session implements Comparable<Session>, Iterable<Student> 
         return total / count;
     }
 
+    public int getNumberOfCredits() {
+        // TODO 自动生成的方法存根
+        return numberOfCredits;
+    }
+
 }
