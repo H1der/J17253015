@@ -24,16 +24,22 @@ public class CourseCatelogTest extends TestCase {
         catalog.add(session2);
     }
 
-    public void testStoreAndLoad() throws IOException {
+    public void testStoreAndLoad() throws Exception {
         final String filename = "CourseCatalogTest.testAdd.txt";
         catalog.store(filename);
         catalog.clearAll();
         assertEquals(0, catalog.getSessions().size());
         catalog.load(filename);
+
         List<Session> sessions = catalog.getSessions();
         assertEquals(2, sessions.size());
         assertSesison(session1, sessions.get(0));
         assertSesison(session2, sessions.get(1));
+
+//        Session session = sessions.get(1);
+//        assertSesison(session2,session);
+//		Student student = session.getAllStudents().get(0);
+//		assertEquals("a",student.getLastName());
     }
 
     private void assertSesison(Session expected, Session retrieved) {
@@ -43,4 +49,6 @@ public class CourseCatelogTest extends TestCase {
         assertEquals(expected.getDepartment(), retrieved.getDepartment());
         assertEquals(expected.getNumber(), retrieved.getNumber());
     }
+
+
 }

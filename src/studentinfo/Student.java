@@ -7,7 +7,6 @@ import java.util.logging.Logger;
 public class Student {
     public enum Grade {
         A(4), B(3), C(2), D(1), F(0);
-
         private int points;
 
         Grade(int points) {
@@ -20,10 +19,7 @@ public class Student {
     }
 
     public enum Flag {
-        ON_CAMPUS(1),
-        TAX_EXEMPT(2),
-        MINOR(4),
-        TROUBLEMAKER(8);
+        ON_CAMPUS(1), TAX_EXEMPT(2), MINOR(4), TROUBLEMAKER(8);
 
         private int mask;
 
@@ -79,7 +75,6 @@ public class Student {
         }
         setName(nameParts);
     }
-
 
     private void setName(List<String> nameParts) {
         this.lastName = removeLast(nameParts);
@@ -214,12 +209,10 @@ public class Student {
     }
 
     public boolean isOn(Flag flag) {
-        // TODO �Զ����ɵķ������
         return (settings & flag.mask) == flag.mask;
     }
 
     public boolean isOff(Flag flag) {
-        // TODO �Զ����ɵķ������
         return !isOn(flag);
     }
 
@@ -227,5 +220,9 @@ public class Student {
         for (Flag flag : flags)
             settings |= flag.mask;
     }
+
+//	public static Student findByLastName(String lastName) {
+//		return new Student(lastName);
+//	}
 
 }

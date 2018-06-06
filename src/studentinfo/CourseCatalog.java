@@ -53,4 +53,5 @@ public class CourseCatalog {
             input.close();
         }
     }
+
 }
